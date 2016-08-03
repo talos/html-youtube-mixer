@@ -38,13 +38,14 @@ AppView.render_template =function(template, vars){
 AppView.format_search_result = function(yt_record){
   var authors = '', author;
 
-  for(var j = 0; j < yt_record.authors.length; j++){
-    author  = yt_record.authors[j];
-    authors+= AppView.render_template('search.result.row.author', {
-                                                            'author_uri': author.uri.$t,
-                                                            'author_name': author.name.$t
-                                                          });
-  }
+  //for(var j = 0; j < yt_record.authors.length; j++){
+  //  author  = yt_record.authors[j];
+  //  authors+= AppView.render_template('search.result.row.author', {
+  //                                                          'author_uri': author.uri.$t,
+  //                                                          'author_name': author.name.$t
+  //                                                        });
+  //}
 
-  return AppView.render_template('search.result.row', $.extend(yt_record, {authors:authors }));
+  //return AppView.render_template('search.result.row', $.extend(yt_record, {authors:authors }));
+  return AppView.render_template('search.result.row', yt_record);
 };

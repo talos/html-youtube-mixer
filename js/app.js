@@ -54,12 +54,12 @@ var App = {
     YTHelper.search(YTHelper.SEARCH_TYPE_VIDEO, query, function(data){
       data.results = [];
 
-      if(!data.feed.entry){
+      if(!data.items){
         return callback(data);
       }
 
-      for(var i =0; i < data.feed.entry.length; i++ ){
-        data.results.push(new YTHelper.YTRecord(data.feed.entry[i]));
+      for(var i =0; i < data.items.length; i++ ){
+        data.results.push(new YTHelper.YTRecord(data.items[i]));
       }
 
       callback(data);
