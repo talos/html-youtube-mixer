@@ -37,14 +37,11 @@ var App = {
 
     var volume_player_1, volume_player_2;
 
-    if(value < 0){//means more on player 1
-      volume_player_1 = Math.abs(value);
-      volume_player_2 = 0;
-    }
-    else{//more on player 2
-      volume_player_1 = 0;
-      volume_player_2 = value;
-    }
+    volume_player_1 = 50;
+    volume_player_2 = 50;
+
+    volume_player_1 -= value / 2;
+    volume_player_2 += value / 2;
 
     App.player1.volume(volume_player_1);
     App.player2.volume(volume_player_2);
